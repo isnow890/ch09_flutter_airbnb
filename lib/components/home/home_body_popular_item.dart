@@ -1,4 +1,6 @@
+import 'package:ch09_flutter_airbnb/constraints.dart';
 import 'package:ch09_flutter_airbnb/size.dart';
+import 'package:ch09_flutter_airbnb/styles.dart';
 import 'package:flutter/material.dart';
 
 class HomeBodyPopularItem extends StatelessWidget {
@@ -33,18 +35,87 @@ class HomeBodyPopularItem extends StatelessWidget {
   }
 
   _buildPopularItemImage() {
-    return SizedBox();
+    return Column(
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: Image.asset(
+            'assets/${popularList[id]}',
+            fit: BoxFit.cover,
+          ),
+        ),
+        const SizedBox(
+          height: gap_s,
+        ),
+      ],
+    );
   }
 
   _buildPopularItemStar() {
-    return SizedBox();
+    return Column(
+      children: [
+        Row(
+          children: [
+            Icon(
+              Icons.star,
+              color: kAccentColor,
+            ),
+            Icon(
+              Icons.star,
+              color: kAccentColor,
+            ),
+            Icon(
+              Icons.star,
+              color: kAccentColor,
+            ),
+            Icon(
+              Icons.star,
+              color: kAccentColor,
+            ),
+            Icon(
+              Icons.star,
+              color: kAccentColor,
+            ),
+          ],
+        ),
+        SizedBox(
+          height: gap_s,
+        ),
+      ],
+    );
   }
 
   _buildPopularItemComment() {
-    return SizedBox();
+    return Column(
+      children: [
+        Text(
+          '깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔깔끔',
+          style: body1(),
+          maxLines: 3,
+          overflow: TextOverflow.ellipsis,
+        )
+      ],
+    );
   }
 
   _buildPopularItemUserInfo() {
-    return SizedBox();
+    return Row(
+      children: [
+        const CircleAvatar(
+          backgroundImage: AssetImage('assets/p1.jpeg'),
+        ),
+        const SizedBox(
+          width: gap_s,
+        ),
+        Column(
+          children: [
+            Text(
+              '데어',
+              style: subTitle1(),
+            )
+          ],
+        ),
+      ],
+    );
   }
 }
